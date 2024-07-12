@@ -27,7 +27,9 @@ export default async function Home() {
   return (
     <main className="">
       <div className="text-center my-8 flex justify-center">
-        <h1 className="text-2xl font-semibold">ToDo List</h1>
+        <h1 className="scroll-m-20 text-2xl font-extrabold tracking-tight lg:text-4xl">
+          ToDo List
+        </h1>
       </div>
       <div className="container mx-auto">
         <Button>
