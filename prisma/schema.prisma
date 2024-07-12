@@ -13,12 +13,8 @@ datasource db {
   url      = env("DATABASE_URL")
 }
 
-type Status {
-  status String
-}
-
 model Task {
   id      String   @id @default(auto()) @map("_id") @db.ObjectId
   content   String
-  status    Status
+  status    String
 }
