@@ -12,12 +12,17 @@ import {
   DropdownMenuSeparator,
   DropdownMenuTrigger,
 } from "@/components/ui/dropdown-menu"
+import { Badge } from "@/components/ui/badge"
+import { capitaL } from "@/lib/utils"
 
 export type Task = {
   id: string
   content: string
   status: "new" | "pending" | "processing" | "success" | "failed"
 }
+
+type badgeType = "outline" | "default" | "destructive" | "secondary"
+
 
 export const columns: ColumnDef<Task>[] = [
   {
@@ -53,6 +58,26 @@ export const columns: ColumnDef<Task>[] = [
         </Button>
       )
     },
+    cell: ({ row }) => {
+      const value : string = capitaL(row.getValue("status"))
+      let badgeType : badgeType = 'default';
+      switch (value) {
+        case 'pending':
+          badgeType = 'secondary';
+          break;
+        case 'processing':
+        case 'success':
+          badgeType = 'outline';
+          break;
+        case 'failed':
+          badgeType = 'destructive';
+          break;   
+        default:
+          break;
+      }
+ 
+      return  <Badge variant={badgeType}>{value}</Badge>
+    },
   },
   {
     id: "actions",
@@ -75,7 +100,7 @@ export const columns: ColumnDef<Task>[] = [
               Edit
             </DropdownMenuItem>
             <DropdownMenuSeparator />
-            <DropdownMenuItem className="text-green-700">Complete</DropdownMenuItem>
+            <DropdownMenuItem>Complete</DropdownMenuItem>
             <DropdownMenuItem className="text-red-700">Delete</DropdownMenuItem>
           </DropdownMenuContent>
         </DropdownMenu>
