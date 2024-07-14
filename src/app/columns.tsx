@@ -54,14 +54,14 @@ export const columns: ColumnDef<Task>[] = [
       const value : string = capitaL(row.getValue("status"))
       let badgeType : badgeType = 'default';
       switch (value) {
-        case 'pending':
+        case 'Pending':
           badgeType = 'secondary';
           break;
-        case 'processing':
-        case 'success':
+        case 'Processing':
+        case 'Success':
           badgeType = 'outline';
           break;
-        case 'failed':
+        case 'Failed':
           badgeType = 'destructive';
           break;   
         default:
