@@ -14,15 +14,7 @@ import {
 } from "@/components/ui/dropdown-menu"
 import { Badge } from "@/components/ui/badge"
 import { capitaL } from "@/lib/utils"
-
-export type Task = {
-  id: string
-  content: string
-  status: "new" | "pending" | "processing" | "success" | "failed"
-}
-
-type badgeType = "outline" | "default" | "destructive" | "secondary"
-
+import { Task, badgeType } from "@/types"
 
 export const columns: ColumnDef<Task>[] = [
   {
