@@ -39,7 +39,7 @@ export default async function Home() {
             <DialogHeader>
               <DialogTitle>New Task</DialogTitle>
               <DialogDescription>
-                Add new task to your list. Click save when you're done.
+                Add new task to your list. Click save when done.
               </DialogDescription>
             </DialogHeader>
             <div className="grid gap-4 py-4">

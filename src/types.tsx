@@ -11,4 +11,10 @@ export type CreateTask = {
     status: StatusType
 }
 
+export type EditTask = {
+  id: string,
+  task: string,
+  status: StatusType
+}
+
 export type badgeType = "outline" | "default" | "destructive" | "secondary"
