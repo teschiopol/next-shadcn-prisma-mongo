@@ -3,6 +3,8 @@
 import prisma from "@/prisma";
 import { CreateTask, EditTask } from './../types'
 
+export const dynamic = "force-dynamic";
+
 export async function getTask() {
   if (process.env.OFFLINE === 'demo') {
     return [
